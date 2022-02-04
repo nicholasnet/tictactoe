@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.empty-hover svg, .no-show svg {
+
+    visibility: hidden;
+}
+
+@media (hover) {
+    .empty-hover:hover svg {
+
+        visibility: visible;
+    }
+}
+
