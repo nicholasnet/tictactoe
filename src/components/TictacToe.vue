@@ -85,8 +85,12 @@ function setMarker(index: number) {
 }
 
 watch(gameOptions, (currentGameOptions, prevGameOptions) => {
-    if (player2NameProcessed.value === '') {
+    if (currentGameOptions === 1 && player2NameProcessed.value === '') {
         player2Name.value = 'Player 2'
+    }
+
+    if (currentGameOptions === 2 && player1NameProcessed.value === '') {
+        player1Name.value = 'Player 1'
     }
 })
 
@@ -187,16 +191,16 @@ watch(gameState, (currentGameState, prevGameState) => {
                     <div v-if="gameOptions === 2">
                         <div class="ml-9 flex w-1/2">
                             <div class="flex-1 pr-1">
-                                <label for="player-1-computer-first" class="block text-sm font-medium">Player 1</label>
+                                <label for="player-2-computer-first" class="block text-sm font-medium">Player 2</label>
                                 <input
                                     type="text"
-                                    name="player-1"
-                                    v-model="player1Name"
-                                    id="player-1-computer-first"
+                                    name="player-2"
+                                    v-model="player2Name"
+                                    id="player-2-computer-first"
                                     autocomplete="given-name"
                                     class="mt-1 block w-full rounded-md text-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                                     v-bind:class="[
-                                        haveValidPlayer1Name
+                                        haveValidPlayer2Name
                                             ? 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'
                                             : 'border-red-300 focus:border-red-500 focus:ring-red-500'
                                     ]"
@@ -204,13 +208,13 @@ watch(gameState, (currentGameState, prevGameState) => {
                                 <div
                                     class="text-sm text-red-500"
                                     v-if="
-                                        player1NameProcessed.length !== 0 &&
+                                        player2NameProcessed.length !== 0 &&
                                         player1NameProcessed === player2NameProcessed
                                     "
                                 >
                                     Name cannot be same
                                 </div>
-                                <div class="text-sm text-red-500" v-if="player1NameProcessed.length === 0">
+                                <div class="text-sm text-red-500" v-if="player2NameProcessed.length === 0">
                                     Cannot be blank
                                 </div>
                             </div>
