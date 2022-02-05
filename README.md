@@ -6,5 +6,6 @@ This application demonstrates the `Minimax` (with Alpha Beta pruning) algorithm 
 * Tailwind CSS
 * Jest
 
+[Demo](https://distracted-ardinghelli-8d78fa.netlify.app/)
 
 Follow me on Twitter @nirmal_poudyal
