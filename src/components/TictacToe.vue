@@ -137,9 +137,9 @@ watch(gameState, (currentGameState, prevGameState) => {
                             type="radio"
                             :value="1"
                             v-model="gameOptions"
-                            class="h-6 w-6 border-gray-300 text-blue-600 focus:ring-blue-500"
+                            class="h-6 w-6 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
-                        <label for="game_option_1" class="ml-3 block text-lg font-medium">
+                        <label for="game_option_1" class="ml-3 block cursor-pointer text-lg font-medium">
                             Human vs. Computer (Human plays first)
                         </label>
                     </div>
@@ -182,9 +182,9 @@ watch(gameState, (currentGameState, prevGameState) => {
                             type="radio"
                             :value="2"
                             v-model="gameOptions"
-                            class="h-6 w-6 border-gray-300 text-blue-600 focus:ring-blue-500"
+                            class="h-6 w-6 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
-                        <label for="game_option_2" class="ml-3 block text-lg font-medium">
+                        <label for="game_option_2" class="ml-3 block cursor-pointer text-lg font-medium">
                             Computer vs. Human (Computer plays first)
                         </label>
                     </div>
@@ -227,9 +227,11 @@ watch(gameState, (currentGameState, prevGameState) => {
                             type="radio"
                             :value="3"
                             v-model="gameOptions"
-                            class="h-6 w-6 border-gray-300 text-blue-600 focus:ring-blue-500"
+                            class="h-6 w-6 cursor-pointer border-gray-300 text-blue-600 focus:ring-blue-500"
                         />
-                        <label for="game_option_3" class="ml-3 block text-lg font-medium"> Human vs. Human </label>
+                        <label for="game_option_3" class="ml-3 block cursor-pointer text-lg font-medium"
+                            >Human vs. Human</label
+                        >
                     </div>
                     <div v-if="gameOptions === 3">
                         <div class="ml-9 flex">
@@ -411,7 +413,7 @@ watch(gameState, (currentGameState, prevGameState) => {
         </div>
         <div class="text-bold mt-4 flex justify-center text-3xl" v-if="gameState.draw">Draw</div>
         <button
-            class="mx-auto mt-8 block w-1/2 rounded bg-blue-500 p-2 font-bold text-white transition duration-300 hover:shadow-xl hover:shadow-blue-500/50"
+            class="mx-auto my-12 block w-1/2 rounded bg-blue-500 p-2 font-bold text-white transition duration-300 hover:shadow-xl hover:shadow-blue-500/50"
             type="button"
             @click="startOver"
         >
